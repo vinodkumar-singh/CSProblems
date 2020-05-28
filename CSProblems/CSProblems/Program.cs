@@ -1,6 +1,7 @@
 ﻿namespace CSProblems
 {
     using CSProblems.GraphProblem;
+    using CSProblems.Heap;
     using CSProblems.TreeProblem;
     using System;
     class Program
@@ -25,6 +26,9 @@
             dj.Run();
 
             SortingAlogrithm.Run();
+            Console.WriteLine();
+            Console.WriteLine("Heap : ");
+            HeapProblem.Run();
             Console.ReadLine();
         }
     }

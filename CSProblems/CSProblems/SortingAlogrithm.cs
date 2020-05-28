@@ -21,8 +21,8 @@ namespace CSProblems
             SelectionSort(arr);
             Console.WriteLine();
 
-            //arr = new int[] { 4, 3, 9, 6, 1, 5 };
-            //MergeSort(arr);
+            arr = new int[] { 4, 3, 9, 6, 1, 5 };
+            MergeSort(arr);
             Console.WriteLine();
         }
 
@@ -92,12 +92,14 @@ namespace CSProblems
 
         public static void MergeSortRecursive(int[] arr)
         {
+            if (arr.Length < 2)
+                return;
             int mid = arr.Length / 2;
             int[] left = new int[mid];
             int[] right = new int[arr.Length - mid];
-            for (int i = 0; i < mid - 1; i++)
+            for (int i = 0; i <= mid - 1; i++)
                 left[i] = arr[i];
-            for (int i = mid; i < arr.Length - 1; i++)
+            for (int i = mid; i <= arr.Length-1; i++)
                 right[i - mid] = arr[i];
             MergeSortRecursive(left);
             MergeSortRecursive(right);
@@ -125,13 +127,13 @@ namespace CSProblems
             }
             while(i < n)
             {
-                arr[k] = arr[i];
+                arr[k] = left[i];
                 i = i + 1;
                 k = k + 1;
             }
             while(j < m)
             {
-                arr[k] = arr[j];
+                arr[k] = right[j];
                 j = j + 1;
                 k = k + 1;
             }
